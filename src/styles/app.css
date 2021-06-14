@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logoIcon svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.bgGradiants {
+  background-image: linear-gradient(212deg, #1eae98, #a9f1df, #233e8b, #e93b81);
+  background-size: 800% 800%;
+
+  -webkit-animation: bgGradiantAnomation 30s ease infinite;
+  -moz-animation: bgGradiantAnomation 30s ease infinite;
+  -o-animation: bgGradiantAnomation 30s ease infinite;
+  animation: bgGradiantAnomation 30s ease infinite;
+  transition: all 0.3s;
+}
+
+.bgGradiants:hover {
+  background-image: linear-gradient(120deg, #233e8b, #e93b81, #1eae98, #a9f1df);
+}
+
+.bgGradiants.delay500 {
+  animation-delay: 0.5s;
+}
+
+@-webkit-keyframes bgGradiantAnomation {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}
+@-moz-keyframes bgGradiantAnomation {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}
+@-o-keyframes bgGradiantAnomation {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}
+@keyframes bgGradiantAnomation {
+  0% {
+    background-position: 91% 0%;
+  }
+  50% {
+    background-position: 10% 100%;
+  }
+  100% {
+    background-position: 91% 0%;
+  }
+}

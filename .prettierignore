@@ -1,0 +1,7 @@
+# Generated coverage pages
+coverage
+# Minified build assets
+dist
+storybook-dist
+# Babelified ES modules for NPM dependents
+esm
