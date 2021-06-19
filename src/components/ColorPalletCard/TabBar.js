@@ -26,7 +26,7 @@ const tabMap = {
 
 const TabBar = ({ tabs, onSwitchTab }) => {
   return (
-    <div className="flex w-full flex-nowrap justify-center items-center align-middle">
+    <div className="flex w-full flex-nowrap justify-center items-center align-middle m-0 p-0">
       {tabs.map((item) => (
         <button
           key={item.id}

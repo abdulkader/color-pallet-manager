@@ -24,7 +24,8 @@ const TailwindConfig = ({ name, colors }) => {
         <CopyIcon />
       </button>
       <pre className="p-4 bg-gray-700 text-xs text-gray-50 overflow-auto">
-        {JSON.stringify({ [cleanedName]: colorList }, null, 2)}
+        {`"${cleanedName}": `}
+        {JSON.stringify(colorList, null, 2)}
       </pre>
     </div>
   );

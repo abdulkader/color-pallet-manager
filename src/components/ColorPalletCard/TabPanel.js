@@ -13,7 +13,14 @@ export const ColorList = ({
   onDeleteColor,
   showEdit,
 }) => (
-  <div className="py-2">
+  <div className="">
+    {colors.length === 0 ? (
+      <div className="p-2 text-center text-xs bg-theme-primary-50 bg-opacity-50 text-theme-primary-600 font-semibold">
+        Add some colors to the pallet
+      </div>
+    ) : (
+      ''
+    )}
     <SortableContainer
       onSortEnd={handleSortEnd}
       useDragHandle
