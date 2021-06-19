@@ -32,7 +32,7 @@ const AddNewPallet = ({ onSubmit }) => {
           onChange={handleChange}
           maxLength="200"
           className="appearance-none w-48 block outline-none focus:outline-none p-2 text-sm h-10 bg-white border border-gray-200"
-          placeholder="Add new Pallet"
+          placeholder="Name your pallet"
         />
         <Button
           label="Add"
