@@ -32,7 +32,7 @@ const ColorPalletCard = ({
 
   useEffect(() => {
     setColorsList(item.colors);
-  }, [item]);
+  }, [item.colors]);
 
   const onTabSwitch = (tab) => {
     tabDispatch({ type: SWITCH_TO_TAB, id: tab.id });
@@ -78,6 +78,7 @@ const ColorPalletCard = ({
           )}
         </div>
         <div className="block justify-center flex-wrap">
+          <TabBar tabs={tabState} onSwitchTab={onTabSwitch} />
           <TabPanel
             tabs={tabState}
             onDeleteColor={onDeleteColor}
@@ -85,8 +86,8 @@ const ColorPalletCard = ({
             colors={colorsList}
             index={index}
             showEdit={showEdit}
+            name={item.pallet}
           />
-          <TabBar tabs={tabState} onSwitchTab={onTabSwitch} />
         </div>
       </div>
     </div>

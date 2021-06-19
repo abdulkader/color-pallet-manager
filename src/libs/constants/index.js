@@ -28,4 +28,9 @@ export const colorPalletCardTabs = [
     id: 'sass',
     active: false,
   },
+  {
+    name: 'CSS',
+    id: 'css',
+    active: false,
+  },
 ];

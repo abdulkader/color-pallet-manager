@@ -24,6 +24,7 @@
     "react-hot-toast": "^2.0.0",
     "react-sortable-hoc": "^2.0.0",
     "react-syntax-highlighter": "^15.4.3",
+    "slugify": "^1.5.3",
     "tinycolor2": "^1.4.2"
   },
   "devDependencies": {

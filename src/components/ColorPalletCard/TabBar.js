@@ -3,6 +3,7 @@ import cx from 'classname';
 import PropTypes from 'prop-types';
 import TailwindCSSLogo from 'assets/images/tailwind-css.svg';
 import SassLogo from 'assets/images/sass.svg';
+import CssLogo from 'assets/images/css.svg';
 
 const tabMap = {
   color: 'Colors',
@@ -14,6 +15,11 @@ const tabMap = {
   sass: (
     <span className="w-5 inline-block logoIcon" title="SASS Variables">
       <SassLogo />
+    </span>
+  ),
+  css: (
+    <span className="w-5 inline-block logoIcon" title="SASS Variables">
+      <CssLogo />
     </span>
   ),
 };

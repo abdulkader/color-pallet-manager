@@ -1,6 +1,16 @@
 import toast from 'react-hot-toast';
 import colorNamer from 'color-namer';
 import tinycolor from 'tinycolor2';
+import slugify from 'slugify';
+
+export const nameConfig = {
+  replacement: '-',
+  remove: undefined,
+  lower: true,
+  strict: true,
+  trim: true,
+  locale: 'en',
+};
 
 export const addToast = (message, type = 'success') => {
   switch (type) {
@@ -93,4 +103,52 @@ export const copyToClipboard = (str) => {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
+};
+
+export const generateTailwindConfig = (name, colors) => {
+  const cleanedName = slugify(name, nameConfig);
+  let count = -1;
+  const start = 100;
+  const colorList = colors.reduce((acc, itm) => {
+    count++;
+    if (count === 0) {
+      return { ...acc, 50: itm.hexCode };
+    }
+    return { ...acc, [start * count]: itm.hexCode };
+  }, {});
+  return [cleanedName, colorList];
+};
+
+export const generateSassConfig = (name, colors) => {
+  const cleanedName = slugify(name, nameConfig);
+  let count = -1;
+  const start = 100;
+  const colorList = colors.reduce((acc, itm) => {
+    count++;
+    if (count === 0) {
+      return acc.concat(`$${cleanedName}-50: ${itm.hexCode};`, '\n');
+    }
+    return acc.concat(
+      `$${cleanedName}-${start * count}: ${itm.hexCode};`,
+      '\n'
+    );
+  }, '');
+  return [cleanedName, colorList];
+};
+
+export const generateCssVarConfig = (name, colors) => {
+  const cleanedName = slugify(name, nameConfig);
+  let count = -1;
+  const start = 100;
+  const colorList = colors.reduce((acc, itm) => {
+    count++;
+    if (count === 0) {
+      return acc.concat(`--${cleanedName}-50: ${itm.hexCode};`, '\n');
+    }
+    return acc.concat(
+      `--${cleanedName}-${start * count}: ${itm.hexCode};`,
+      '\n'
+    );
+  }, '');
+  return [cleanedName, colorList];
 };

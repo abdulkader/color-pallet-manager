@@ -2,14 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ColorPill from 'components/ColorPill';
 import { SortableContainer, SortableItem } from 'components/SortableLists';
-
-export const Tailwind = ({ colors }) => (
-  <div className="flex flex-1">Tailwind configs</div>
-);
-
-export const SASS = ({ colors }) => (
-  <div className="flex flex-1">SASS configs</div>
-);
+import TailwindConfig from './TailwindConfig';
+import SassConfig from './SassConfig';
+import CssVarConfig from './CssVarConfig';
 
 export const ColorList = ({
   handleSortEnd,
@@ -48,8 +43,9 @@ export const ColorList = ({
 
 const tabMap = {
   color: ColorList,
-  tailwind: Tailwind,
-  sass: SASS,
+  tailwind: TailwindConfig,
+  sass: SassConfig,
+  css: CssVarConfig,
 };
 
 const TabPanel = ({ tabs, ...props }) => {
