@@ -20,7 +20,9 @@ const MyProjectCard = ({ item, urlPrefix, onUpdate }) => {
     });
   };
   const defaultColor = [{ hexCode: '#f2f2f2' }];
-  const colors = item?.pallets?.[0]?.colors;
+  const colors = item?.pallets?.reduce((acc, pallet) => {
+    return acc.concat(pallet?.colors.map((item) => item));
+  }, []);
   const headerColors = colors && colors.length > 0 ? colors : defaultColor;
   return (
     <div className="p-2 block rounded-md w-1/4 relative">

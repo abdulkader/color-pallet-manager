@@ -21,10 +21,11 @@ import {
 import { createProject, getMyProjectsList } from 'services/Pallet.service';
 import { addToast } from 'libs/utilities';
 import MyProjectsLists from 'components/MyProjectsLists';
+import Welcome from 'components/Welcome';
 
 const HomePage = () => {
   const localStore = useLocalStore();
-  const { session } = useAuth();
+  const { session, isLoggedIn, loading } = useAuth();
   const { state: colorState, dispatch: colorDispatch } = useColor();
   const [myProjectsList, setMyProjectsList] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
@@ -53,7 +54,6 @@ const HomePage = () => {
     });
   };
 
-  const isLoggedIn = session?.user?.id || false;
   const userID = session?.user?.id || null;
   const router = useRouter();
 
@@ -92,6 +92,9 @@ const HomePage = () => {
   return (
     <MainLayout seoData={seoData} onAddNewPallet={onAddNewPallet}>
       <Container>
+        {myProjectsList.length === 0 && colorState.length === 0 && (
+          <Welcome isLoggedIn={Boolean(isLoggedIn)} loading={loading} />
+        )}
         {isLoggedIn ? (
           <div className="block w-full h-auto">
             <h3 className="text-lg font-semibold text-left block text-theme-primary-700">

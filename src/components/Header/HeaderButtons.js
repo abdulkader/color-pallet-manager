@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import LoginForm from 'components/Auth/LoginForm';
 import { useAuth } from 'hooks';
+import Link from 'next/link';
 
 const HeaderButtons = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -13,10 +14,15 @@ const HeaderButtons = () => {
     <div className="block w-auto text-center py-2">
       {isLoggedIn ? (
         <Fragment>
+          <Link href="/">
+            <a className="bg-white text-xs font-semibold text-theme-primary-500 mx-2">
+              My Projects
+            </a>
+          </Link>
           <button
             type="button"
             onClick={logout}
-            className="appearance-none bg-white text-xs font-semibold text-theme-primary-500 mx-2"
+            className="appearance-none bg-white text-xs font-semibold text-theme-secondary-500 mx-2"
           >
             Logout
           </button>

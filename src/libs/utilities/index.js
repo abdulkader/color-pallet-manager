@@ -19,6 +19,9 @@ export const addToast = (message, type = 'success') => {
   }
 };
 
+export const random = (min, max) =>
+  Math.floor(Math.random() * (max - min)) + min;
+
 export const sanitizeHex = (hex) => {
   const sanitizedHex = hex.replaceAll('##', '#');
   return sanitizedHex;

@@ -6,7 +6,7 @@ create table projects (
   name text,
   is_public boolean default true,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-  updated_at timestamp with time zone
+  updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
 alter table projects enable row level security;

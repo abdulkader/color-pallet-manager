@@ -31,10 +31,9 @@ const PalletsDetailsPage = () => {
     []
   );
   const [currentProject, setCurrentProject] = useState({ pallets: [] });
-  const { session } = useAuth();
+  const { session, isLoggedIn } = useAuth();
   const { url } = router.query;
-  const userID = session?.user?.id;
-  const isLoggedIn = session?.user?.id || false;
+  const userID = session?.user?.id;  
   const getPalletData = async () => {
     if (url) {
       let { data, status, error } = await getProjectDetails(url);
@@ -92,7 +91,6 @@ const PalletsDetailsPage = () => {
       });
     }
   };
-  console.log(currentProject);
   return (
     <MainLayout
       seoData={seoData}
