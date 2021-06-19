@@ -13,7 +13,7 @@ const ColorPallets = ({
 }) => {
   return (
     <div className="block">
-      <div className="flex flex-wrap overflow-auto justify-center w-auto min-w-full items-start align-top p-2 pb-12">
+      <div className="flex flex-wrap overflow-visible justify-center w-auto min-w-full items-start align-top p-2 pb-12">
         {data.map((item, index) => (
           <ColorPalletCard
             item={item}

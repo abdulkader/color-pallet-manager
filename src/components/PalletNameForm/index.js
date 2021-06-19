@@ -59,8 +59,8 @@ const PalletNameForm = ({
       >
         <input
           type="hidden"
+          id={`palletNameInput_index_${formState.index}`}
           name="index"
-          id="index"
           value={formState.index}
           readOnly
         />
@@ -69,7 +69,7 @@ const PalletNameForm = ({
             <input
               type="text"
               name="pallet"
-              id="pallet"
+              id={`palleInput_index_${formState.index}`}
               value={formState.pallet}
               onChange={handleChange}
               maxLength="20"
