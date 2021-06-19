@@ -70,8 +70,8 @@ const ColorInput = ({ onAddColor, pallet, index }) => {
           readOnly
         />
         <span
-          className="absolute w-4 h-4 border border-gray-100 rounded-full inline-block left-1 top-2"
-          style={{ backgroundColor: inputColor }}
+          className="absolute w-4 h-4 rounded-3xl inline-block left-1 top-2"
+          style={{ backgroundColor: inputColor, borderColor: inputColor }}
         />
         <input
           type="text"
