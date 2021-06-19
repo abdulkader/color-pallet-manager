@@ -44,6 +44,17 @@ const HeaderButtons = () => {
           />
         </div>
       )}
+      <a
+        className="bg-white text-xs font-semibold text-theme-primary-500 mx-2"
+        href="https://github.com/abdulkader/color-pallet-manager"
+        target="_blank"
+      >
+        <img
+          src="/GitHub-Mark-64px.png"
+          alt="Github"
+          className="w-6 md:w-8 inline-block"
+        />
+      </a>
     </div>
   );
 };
